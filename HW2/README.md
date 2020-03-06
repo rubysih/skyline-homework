@@ -1,0 +1,3 @@
+- 樣式使用 sass 撰寫，並用 webpack 打包及編譯
+- 以 NodeJs + Express 做為伺服器架起專案
+- 引入套件 plugin-proposal-class-properties 解決箭頭函式編譯問題

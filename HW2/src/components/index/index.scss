@@ -15,10 +15,10 @@
     padding: 10px;
     border-radius: 10px;
 }
-.number, .btn{
+.btn{
     background: #fff;
     cursor: pointer;
-    float: left;
+    display: inline-block;
     height: 80px;
     width: 80px;
     font-weight: bold;
