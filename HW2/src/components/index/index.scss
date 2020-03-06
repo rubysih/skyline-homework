@@ -1,0 +1,45 @@
+.container{
+    width: 360px;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: Arial, Helvetica,"微軟正黑體";
+}
+.show-block{
+    border: 1px #aaa solid;
+    height: 80px;
+    margin: 5px;
+    font-size: 36px;
+    line-height: 80px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 10px;
+}
+.number, .btn{
+    background: #fff;
+    cursor: pointer;
+    float: left;
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    margin: 5px;
+    border: 1px solid #aaa;
+    font-size: 28px;
+    border-radius: 10px;
+    &.two{
+        width: 170px;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.btn-block{
+    width: 100%;
+    .number-block{
+        float: left;
+        width: 270px;
+    }
+}
+
