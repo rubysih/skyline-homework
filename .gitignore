@@ -1,7 +1,2 @@
 /node_modules
-yarn.lock
-package-lock.json
-package.json
-.gitignore
-/HW2_1
-/HW2_2
+
