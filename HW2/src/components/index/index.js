@@ -14,7 +14,7 @@ class Index extends Component {
   }
 
   handleNumClick = (e) => {
-    const {opList, numList, isFinshCal} = this.state;
+    const { opList, numList, isFinshCal } = this.state;
     const value = e.target.value;
     const index = opList.length || 0;
     if(!numList.length){
@@ -22,11 +22,11 @@ class Index extends Component {
     }else if(isFinshCal){
       numList[index] = value;
     }else{
-      numList[index] = numList[index]?numList[index]+value:value;
+      numList[index] = numList[index] ? numList[index] + value : value;
     }
     this.setState({
       ...this.state,
-      numList: numList,
+      numList,
       show: numList[numList.length - 1],
       isFinshCal: false
     })
@@ -34,7 +34,7 @@ class Index extends Component {
 
   handleOpClick = (e) => {
     const value = e.target.value;
-    const {opList} = this.state;
+    const { opList } = this.state;
     switch(value) {
       case 'x':
         opList.push('*');
@@ -47,14 +47,14 @@ class Index extends Component {
     }
     this.setState({
       ...this.state,
-      opList: opList,
+      opList,
       isFinshCal: false
     })
   }
 
   handleCalculate = () => {
     let formula = '';
-    const {opList, numList} = this.state;
+    const { opList, numList } = this.state;
     opList.forEach((item, index) => {
       formula += numList[index] + item;
       if(index === (opList.length - 1)) formula += numList[index + 1];
@@ -80,23 +80,23 @@ class Index extends Component {
   }
 
   render() {
-    let numberList = [];
-    let funcList = ["+", "-", "x", "÷"];
+    let numList = [];
+    let opList = ["+", "-", "x", "÷"];
     for (let i = 1; i <= 9; i++) {
-      numberList.push(i);
+      numList.push(i);
     }
-    numberList = [...numberList, 0, "."];
+    numList = [...numList, 0, "."];
     const { show } = this.state;
     return (
       <div className="container">
         <div className="show-block">{show}</div>
         <div className="btn-block">
           <div className="number-block">
-            {numberList.map(item => (
+            {numList.map(item => (
               <button key={item} type="button" className={`btn  ${item===0 ? "two" : ""}`} onClick={this.handleNumClick} value={item}>{item}</button>
             ))}
           </div>
-          {funcList.map(item => (
+          {opList.map(item => (
             <button key={item} type="button" className={`btn `} onClick={this.handleOpClick} value={item}>{item}</button>
           ))}
           <button key='AC' type="button" className='btn two' onClick={this.handleRefresh}>AC</button>
